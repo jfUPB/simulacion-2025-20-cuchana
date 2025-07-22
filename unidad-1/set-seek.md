@@ -43,6 +43,7 @@ Modifiqué el random para que vaya en un rango de 0 a 5
 -Ocurrió lo que esperabas? ¿Por qué crees que sí o por qué crees que no?
 
   <img width="363" height="147" alt="image" src="https://github.com/user-attachments/assets/8e5f7748-1c8f-4d2f-b6d9-e4f1ec385c02" />
+  
   Si ocurrio lo que esperaba, creria yo que fue debido al rango que definí, si fueran numeros menores, o un rango mas pequeño creo que es posible que tenga un movimiento mas limitado, por ejemplo si pusiera un rango de 2,4 solo habria movimiento en 3, lo cual es recto hacia arriba.
 
 ### Actividad 4: 
@@ -59,9 +60,48 @@ Modifiqué el random para que vaya en un rango de 0 a 5
 Una vez has entendido el concepto de distribución normal, vas a pensar en una nueva manera de visualizarlo.
 
 Crea un nuevo sketch en p5.js que represente una distribución normal.
-Copia el código en tu bitácora.
-Coloca en enlace a tu sketch en p5.js en tu bitácora.
-Selecciona una captura de pantalla de tu sketch y colócala en tu bitácora.
+
+- Copia el código en tu bitácora:
+
+  ```js
+  let puntos = [];
+
+  function setup() {
+  createCanvas(600, 400);
+  background(255);
+  }
+
+  function draw() {
+ 
+  for (let i = 0; i < 10; i++) {
+    let x = randomGaussian(width / 2, 60); 
+    let y = 0; 
+    puntos.push({ x: x, y: y });
+  }
+
+  noStroke();
+  fill(255, 105, 180, 50); 
+  for (let i = 0; i < puntos.length; i++) {
+    let p = puntos[i];
+    ellipse(p.x, p.y, 4, 4);
+    p.y += 1.5; 
+  }
+
+  puntos = puntos.filter(p => p.y < height);
+  }
+``
+
+- Coloca en enlace a tu sketch en p5.js en tu bitácora: https://editor.p5js.org/luciana.gp0531/sketches/2yXrNv9QP
+
+
+- Selecciona una captura de pantalla de tu sketch y colócala en tu bitácora:
+
+  <img width="589" height="398" alt="image" src="https://github.com/user-attachments/assets/15930438-6b4a-4bd2-9f63-8567d7932518" />
+
+Se puede ver la forma de la distribucion gaussiana, lo hice en forma de lluvia para que podamos ver la campana y como hay una concentración en el centro y mas ausencia en las esquinas.
+
+
+
 
 
 
