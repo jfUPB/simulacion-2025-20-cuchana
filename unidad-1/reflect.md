@@ -39,3 +39,5 @@
 Calificación 5/5
 
 Tiene todos los puntos de la actividad, es un codigo claro, no reduntante y me gusta mucho la forma en la que se ve más pesada la imagen cuando se refiere a el estrés, se ve muy fluido el intercambio entre los estados, tiene interacciones y es generativo, eres un crack mi bro, i love you ❤️
+
+Calificación para David Galvis
