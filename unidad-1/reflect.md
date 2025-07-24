@@ -41,3 +41,19 @@ Calificación 5/5
 Tiene todos los puntos de la actividad, es un codigo claro, no reduntante y me gusta mucho la forma en la que se ve más pesada la imagen cuando se refiere a el estrés, se ve muy fluido el intercambio entre los estados, tiene interacciones y es generativo, eres un crack mi bro, i love you ❤️
 
 Calificación para David Galvis
+
+### Actividad 11: 
+
+- Continuar: ¿Qué actividad, ejemplo o explicación de esta unidad te resultó más reveladora o útil para tu aprendizaje? ¿Qué deberíamos mantener sí o sí?
+  La actividad 8 me sirvió mucho para poder visualizar mejor como aplicar estas aleatoriedades, me parece super esa estrategia de intercalar las actividades de exploracion con esos desafios.
+  
+- Dejar de hacer: ¿Hubo alguna actividad o concepto que te pareció redundante, confuso o menos útil? ¿Hay algo que eliminarías o cambiarías por completo?
+  La verdad me gustaron todas, depronto la que menos me gusto fue la 9 pero entiendo que es una forma de hacer un cierre de los conceptos entonces me parece super bien
+  
+- Empezar a hacer: ¿Qué te faltó en esta unidad? ¿Quizás más ejemplos de artistas, más desafíos técnicos, más teoría? ¿Qué idea tienes para hacerla mejor?
+  Referentes artisticos, me gusta mucho ver esos conceptos aplicados en obras reales.
+  
+- Balance Teoría-Práctica: ¿Cómo sentiste el equilibrio entre analizar los ejemplos del texto guía y ponerte a programar tus propios sketches? Explica tu respuesta.
+  La verdad me pareció un equilibrio perfecto, era exploracion y aplicacion, muy bacano y no era como 4 ejercicios de teoria y luego de aplicación, si no que estan combinados
+  
+- Comentario Adicional: ¿Hay algo más que quieras compartir sobre tu experiencia en esta unidad?
