@@ -1,6 +1,102 @@
-# Unidad 2
 
-## 🔎 Fase: Set + Seek
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Actividad 5: 
 
@@ -86,3 +182,4 @@ Se dibuja usando los siguientes parámetros:
 3. Aceleración hacia el mouse
   Observación: El objeto parece tener intención, como si “quisiera” alcanzar el mouse.
   Resultado visual: Se dirige al mouse, primero lento y luego más rápido, dependiendo de la distancia.
+
