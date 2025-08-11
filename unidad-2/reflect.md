@@ -3,13 +3,8 @@
 
 ## 🤔 Fase: Reflect
 
-# Unidad 2
 
-
-## 🤔 Fase: Reflect
-
-
-### Actividad 10
+### Actividad 9
 Parte 1: recuperación de conocimiento (Retrieval Practice)
 
 Escribe la “receta” del marco MOTION 101.
@@ -31,9 +26,18 @@ Yo lo veo como unas flehcas conectadas, desde el origen hasta la posicion del ob
 Parte 2: reflexión sobre tu proceso (Metacognición)
 
 ¿Qué fue lo más desafiante en la Actividad 08? ¿El concepto creativo, la implementación del algoritmo de aceleración o la integración de la interactividad?
+Para mi fue implementar un algoritmo de aceleracion nuevo
 
 
 ¿Tu algoritmo de aceleración produjo el efecto que esperabas? Describe un momento “sorpresa” (esperado o inesperado) durante su desarrollo.
+
+Sii, pero pensaba que si iba a ver mas bonito, intente mejorarlo esteticamente porque funcionalmente cumplio su funcion
+
 ¿Cómo ha cambiado tu forma de pensar sobre el “movimiento” en una pantalla después de esta unidad?
+
+Antes veía el movimiento en pantalla como un simple cambio de posición cuadro a cuadro, pero ahora lo entiendo como un proceso más orgánico, donde la velocidad y la aceleración influyen de forma directa
+
 Si tuvieras una semana más, ¿qué mejorarías o qué otro algoritmo de aceleración te gustaría experimentar?
+
+Si tuviera más tiempo, integraría un algoritmo de aceleración basado en ruido Perlin para generar variaciones suaves y más naturales en la dirección y magnitud de la aceleración.
 
