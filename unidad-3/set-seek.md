@@ -238,10 +238,92 @@ https://editor.p5js.org/luciana.gp0531/sketches/FarsstfGG
 
 - Atracción gravitacional.
   
-Explica cómo modelaste cada fuerza.
+**Explica cómo modelaste cada fuerza.**
 
-Conceptualmente cómo se relaciona la fuerza con la obra generativa.
-Copia el enlace a tu ejemplo en p5.js.
-Copia el código.
-Captura una imagen representativa de tu ejemplo.
+La atracción gravitacional sigue la Ley de Gravitación Universal:
+G = constante gravitatoria.
+m1,m2= masas de los objetos.
+r = distancia entre ellos.
+r^ = dirección desde una masa hacia la otra.
+
+
+
+Cada partícula siente la fuerza de atracción hacia la otra (o hacia un planeta central) y ajusta su aceleración.
+
+**Conceptualmente cómo se relaciona la fuerza con la obra generativa.**
+
+Conceptualmente, la gravedad representa la fuerza invisible que conecta todo, creando orden a partir del caos y trayendo a los cuerpos hacia un centro común.
+
+
+**CÓDIGO**
+```js
+let particles = [];
+
+function setup() {
+  createCanvas(800, 600);
+  
+  // Crear partículas aleatorias
+  for (let i = 0; i < 40; i++) {
+    particles.push(new Particle(random(width), random(height)));
+  }
+}
+
+function draw() {
+  background(20);
+  
+  // El mouse es el planeta
+  let attractor = createVector(mouseX, mouseY);
+  
+  
+  fill(200, 200, 50);
+  noStroke();
+  ellipse(attractor.x, attractor.y, 40, 40);
+  
+
+  for (let p of particles) {
+    p.applyGravity(attractor);
+    p.update();
+    p.show();
+  }
+}
+
+class Particle {
+  constructor(x, y) {
+    this.pos = createVector(x, y);
+    this.vel = p5.Vector.random2D().mult(random(2));
+    this.acc = createVector(0, 0);
+    this.mass = random(2, 5); // masa de la partícula
+  }
+  
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acc.add(f);
+  }
+  
+  applyGravity(target) {
+    let dir = p5.Vector.sub(target, this.pos);
+    let distance = constrain(dir.mag(), 20, 200); // evita divisiones por cero
+    dir.normalize();
+    let strength = (1 * this.mass) / (distance * distance); // fórmula simplificada
+    let force = dir.mult(strength * 100); // factor ajustable
+    this.applyForce(force);
+  }
+  
+  update() {
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
+    this.acc.mult(0);
+  }
+  
+  show() {
+    fill(150, 200, 255);
+    noStroke();
+    ellipse(this.pos.x, this.pos.y, this.mass * 5);
+  }
+}
+```
+https://editor.p5js.org/luciana.gp0531/sketches/n2LFzDoPv
+
+<img width="357" height="303" alt="image" src="https://github.com/user-attachments/assets/a8b60eb3-8707-4e80-947a-b012392a4c17" />
+
 
