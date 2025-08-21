@@ -1,7 +1,10 @@
 # Unidad 2
 
 
-## 🛠 Fase: Apply
+## 🛠 Fase: Apply (El trabajo que está aquí se realiza de manera formativa porque en términos sumativos el trabajo no se entregó a tiempo)
+
+no entregó. Nota del profesor.
+
 
 Describe el concepto de tu obra generativa.
 
@@ -152,3 +155,4 @@ https://editor.p5js.org/luciana.gp0531/sketches/Z1bEcHu8p
 Una captura de pantalla representativa de tu pieza de arte generativo.
 
 <img width="904" height="617" alt="image" src="https://github.com/user-attachments/assets/7a2b37e4-edcc-4d67-a864-557b10bc6515" />
+
