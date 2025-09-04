@@ -3,23 +3,18 @@
 ## Explicación conceptual de la obra
 
 * ¿Qué concepto de la unidad 4 y cómo lo aplicaste en la obra?
-> Tu respuesta aquí:
 > De la unidad 4 tomé el concepto de ondas, lo aplique en la obra en las palpitaciones de las "personas" 
 
 * ¿Qué concepto de la unidad 3 y cómo lo aplicaste en la obra?
-> Tu respuesta aquí:
 > De la unidad 3 use el concepto de atraccion gravitacional para que los hilos de memorias viajen alrededor de las personas
 
 * ¿Qué concepto de la unidad 2 y cómo lo aplicaste en la obra?
-> Tu respuesta aquí:
 > Use el motion 101 para condicionar el movimiento de las lineas, garantizando un movimiento constante
 
 * ¿Qué concepto de la unidad 1 y cómo lo aplicaste en la obra?
-> Tu respuesta aquí:
 > El perlin noise, para la generacion aleatoria de los recuerdos
 
 ## ¿Cómo resolviste la interacción?
-> Tu respuesta aquí:
 > Dejé que las personas decidan cuantas personas van a haber en el mapa y que puedan moverlas
 
 ## Enlace a la obra en el editor de p5.js
@@ -197,6 +192,7 @@ function keyPressed(){
 ```
 
 ## Captura de pantalla representativa
+
 
 
 
