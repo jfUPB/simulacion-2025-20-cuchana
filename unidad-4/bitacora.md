@@ -187,10 +187,17 @@ function drawUI(energy){
   const s = `Partículas: ${movers.length} · Portales: ${attractors.length} · Flujo Perlin: ${useFlow?'on':'off'} · Ondas: ${wavesOn?'on':'off'} · Energía: ${energy.toFixed(2)}`;
   if(readout) readout.textContent = s;
 }
-
+function keyPressed(){
+  if(key === 'q' || key === 'Q'){ 
+    movers.length = 0;   // primero los borramos
+    trail.clear();       // limpiar estelas
+    resetSketch();       // y luego volvemos a generarlos
+  }
+}
 ```
 
 ## Captura de pantalla representativa
+
 
 
 
