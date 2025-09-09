@@ -33,6 +33,7 @@
 ```
 
 ## Captura de pantalla representativa
+<img width="1852" height="813" alt="image" src="https://github.com/user-attachments/assets/5d1c2ba7-8ac7-4729-8cb2-49ac06c90140" />
 
 
 
