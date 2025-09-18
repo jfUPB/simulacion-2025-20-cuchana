@@ -426,4 +426,190 @@ class Repeller {
 ```
 7. <img width="376" height="183" alt="image" src="https://github.com/user-attachments/assets/04a10760-a9c6-4a22-872b-1d301d207f42" />
 
+## Actividad 3
+
+1. Es unidad incluye una novedad: DISEÑO. Debes intencionar tu obra. Esta vez te pediré que DISEÑES antes de generar código. Define un concepto, haz bocetos, define la interacción, etc. ¿Cuál es el concepto de tu obra? ¿Qué quieres comunicar con ella?
+
+   Quiero retratar las constelaciones, como hacer que varias estrellas y planetas se conecten, cada particula sería un tipo de estrella que nace, se mueve, brilla y luego desaparece. Quiero que el usuario pueda cambiar el color de las estrellas, no quiero que sea una obra muy calmada si no que sea mas bien dinámica, quiero que cada uno tenga su cielo "personal"
+<img width="1001" height="465" alt="image" src="https://github.com/user-attachments/assets/9900eec7-12bf-4316-9410-1856e656e4a6" />
+   La interaccion la voy a poner con el espacio que va a alterar los tonos de las etrellas
+   
+3. Debes utilizar los conceptos de herencia y polimorfismo que revisaste en la fase de investigación.
+   En herencia y polimorfismo voy a usar una clase base Star, con subclases CircleStar, TriangleStar y StreakStar.
+5. Debes utilizar al menos un concepto de cada una de las unidades anteriores: 4 conceptos.
+   Unidad 1:
+   Ruido Perlin: El movimiento suave de las estrellas es con esto
+   
+   Unidad 2:
+   Motion 101: Movimiento con aceleracion para dar dinamismo a las estrellas
+
+   Unidad 3:
+   Atracción: Las constelaciones se construyen cuando se juntan estrellas y se atraen
+
+   Unidad 4:
+   Movimiento angular/oscilatorio: usamos senoides para que las estrellas oscilen, imitando vibración estelar.
+   
+7. Debes definir cómo vas a gestionar el tiempo de vida de las partículas y la memoria.
+   Cada estrella tiene lifespan, cuando su vida llega a 0 se elimina del array. Así evitamos saturación de memoria y reforzamos la idea de lo efímero.
+9. La obra debe ser interactiva en tiempo real. Puedes usar teclado, mouse, música, el micrófono, video, sensor o cualquier otro dispositivo de entrada.
+10. Incluye un enlace a tu código en el editor de p5.js.
+    [Enlace](https://editor.p5js.org/luciana.gp0531/sketches/c_qNXrVc-)
+12. Incluye el código fuente.
+```js
+let stars = [];
+let paletteIndex = 0;
+let palettes = [
+  [ [200,200,255], [150,150,255], [255,255,255] ], // frío
+  [ [255,200,150], [255,150,100], [200,100,50] ], // cálido
+  [ [100,255,200], [255,100,200], [200,255,100] ]  // neón
+];
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(0);
+}
+
+function draw() {
+  background(0, 40); // fondo con rastro
+  
+  // generación automática de estrellas
+  if (frameCount % 5 === 0) {
+    let choice = int(random(3));
+    let pos = createVector(random(width), random(height));
+    if (choice === 0) stars.push(new CircleStar(pos));
+    if (choice === 1) stars.push(new TriangleStar(pos));
+    if (choice === 2) stars.push(new StreakStar(pos));
+  }
+  
+  // actualizar y mostrar
+  for (let i = stars.length-1; i >= 0; i--) {
+    let s = stars[i];
+    s.applyAttraction(mouseX, mouseY);
+    s.update();
+    s.display();
+    if (s.isDead()) {
+      stars.splice(i,1);
+    }
+  }
+  
+  // conectar constelaciones
+  for (let i = 0; i < stars.length; i++) {
+    for (let j = i+1; j < stars.length; j++) {
+      let d = dist(stars[i].pos.x, stars[i].pos.y, stars[j].pos.x, stars[j].pos.y);
+      if (d < 100) {
+        stroke(255, 100);
+        line(stars[i].pos.x, stars[i].pos.y, stars[j].pos.x, stars[j].pos.y);
+      }
+    }
+  }
+}
+
+function keyPressed() {
+  if (key === ' ') {
+    paletteIndex = (paletteIndex + 1) % palettes.length;
+  }
+}
+
+// ===================== CLASES =====================
+class Star {
+  constructor(pos) {
+    this.pos = pos.copy();
+    this.vel = p5.Vector.random2D().mult(0.5);
+    this.acc = createVector(0,0);
+    this.lifespan = 255;
+    this.col = random(palettes[paletteIndex]);
+    this.xoff = random(1000);
+    this.yoff = random(2000);
+
+    // Propiedades para oscilación (Unidad 4)
+    this.angle = random(TWO_PI);
+    this.amp = random(0.5, 3);       // amplitud de oscilación
+    this.freq = random(0.02, 0.06);  // frecuencia de oscilación
+  }
+  applyAttraction(mx,my) {
+    let mouse = createVector(mx,my);
+    let dir = p5.Vector.sub(mouse, this.pos);
+    let d = dir.mag();
+    if (d < 150) {
+      dir.setMag(0.05);
+      this.acc.add(dir);
+    }
+  }
+  update() {
+    // movimiento con Perlin Noise (original)
+    this.pos.x += map(noise(this.xoff),0,1,-1,1);
+    this.pos.y += map(noise(this.yoff),0,1,-1,1);
+    this.xoff += 0.01;
+    this.yoff += 0.01;
+    
+    // --- OSILACIÓN ANGULAR (Unidad 4) añadida ---
+    this.angle += this.freq;
+    let offset = createVector(sin(this.angle) * this.amp, cos(this.angle) * this.amp);
+    // ------------------------------------------------
+
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
+    this.pos.add(offset); // aplicar la oscilación encima del movimiento original
+
+    this.acc.mult(0);
+    this.lifespan -= 1.2;
+  }
+  isDead() {
+    return this.lifespan < 0;
+  }
+  display() {}
+}
+
+class CircleStar extends Star {
+  display() {
+    noStroke();
+    fill(this.col[0], this.col[1], this.col[2], this.lifespan);
+    ellipse(this.pos.x, this.pos.y, 8);
+  }
+}
+
+class TriangleStar extends Star {
+  display() {
+    noStroke();
+    fill(this.col[0], this.col[1], this.col[2], this.lifespan);
+    push();
+    translate(this.pos.x, this.pos.y);
+    rotate(this.angle);
+    triangle(-5, 5, 5, 5, 0, -5);
+    pop();
+  }
+}
+
+class StreakStar extends Star {
+  update() {
+    super.update();
+    // Motion 101 extra (original)
+    let extra = this.vel.copy().mult(0.02);
+    this.acc.add(extra);
+  }
+  display() {
+    stroke(this.col[0], this.col[1], this.col[2], this.lifespan);
+    line(this.pos.x, this.pos.y, this.pos.x - this.vel.x*5, this.pos.y - this.vel.y*5);
+  }
+}
+```
+14. Captura de pantallas de tu obra con las imágenes que más te gusten
+
+<img width="806" height="705" alt="image" src="https://github.com/user-attachments/assets/f4e073e0-f499-495d-be83-99ecb5b5c8ad" />
+<img width="822" height="659" alt="image" src="https://github.com/user-attachments/assets/2300e315-a976-4057-89cd-a466cd26d353" />
+
+## Justificación: 
+
+1. Investigación y experimentación: 5
+   Cumplí todos los requisitos de la unidad y creo que hice un analisis bueno de cada caso y como funciona, aun asi sean conceptos casi que iguales hice enfasis en los cambios entre cada ejemplo, y creo que se puede entender bien que cambios hice y como logran el resultado
+2. Intención y diseño: 4.5
+   Me siento satisfecha con el resultado que logré pero creo que no fui muy clara en el proceso de implementación.
+3. Aplicación técnica: 5
+  Considero que logre un codigo muy eficaz y entendible sin caer en redundancias
+4. Calidad de la Obra Final: 5
+   Los cambios son sutiles y se ve armonico, no pierde el concepto ni coherencia y es generativa
+   
+
+
+
 
