@@ -1,4 +1,4 @@
-<img width="286" height="190" alt="image" src="https://github.com/user-attachments/assets/29442dcf-cdc9-4702-a2f6-2be31720f69f" /># Evidencias de la unidad 5
+# Evidencias de la unidad 5
 
 ## Actividad 2: 
 1. ¿Cómo se está gestionando la creación y la desaparción de las partículas y cómo se gestiona la memoria en cada una de las simulaciones?
@@ -425,4 +425,5 @@ class Repeller {
 }
 ```
 7. <img width="376" height="183" alt="image" src="https://github.com/user-attachments/assets/04a10760-a9c6-4a22-872b-1d301d207f42" />
+
 
