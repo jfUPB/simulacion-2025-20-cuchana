@@ -89,6 +89,25 @@ Con cada click se asentua mas el espiral
 
 ## Actividad 4:
 
+- Explica con tus palabras el objetivo y la lógica general de cálculo de cada una de las tres reglas de Flocking (Separación, Alineación, Cohesión).
+     - Separacion:
+          1. Objetivo: evitar que los agentes se amontonen demasiado
+          2. Logica general de cálculo: cada agentge revisa que particulas vecinas estan demasiado cerca, para que cada uno calcule un vector que apunta lejos de su vecino. Estos vectores se suman, promedian y se convierten en una fuerza de steering q lo empuja en direccion contraria.
+             
+    - Alineación:
+         1. Objetivo: moverse en la misma dirección promedio de los vecinos cercanos
+         2. Lógica de calculo: el agente suma los vectores de velocidad de todos sus vecinos y calcula el promedio. Ese vector promedio es la dirección deseada.
+
+   - Cohesión:
+        1. Objetivo: Acercarse a la posición promedio de los vecinos, osea mantener el grupo unido
+        2. Lógica de cálculo: el agente calcula el promedio de las posiciones de sus vecinos y luego genera un vector que apunta hacia ese punto promedio
+           
+- Lista los parámetros clave identificados (radio de percepción, pesos de las reglas, maxspeed, maxforce).
+     - Perception radius
+     - Pesos de las reglas
+     - Velocidad máxima
+     - Fuerza máxima
+- Describe la modificación que realizaste al código y explica detalladamente el efecto que tuvo en el comportamiento colectivo del enjambre (¿Se dispersan? ¿Forman grupos compactos? ¿se mueven caóticamente?). Incluye una captura de pantalla o GIF si ilustra bien el cambio. Muestra el fragmento de código modificado.
 
 ## Actividad 5: 
 
@@ -254,4 +273,11 @@ class Particle {
 <img width="1841" height="803" alt="image" src="https://github.com/user-attachments/assets/e7edeeb9-6428-4110-9c91-c602404852f6" />
 
 <img width="1826" height="804" alt="image" src="https://github.com/user-attachments/assets/0e2bc242-b1dc-480c-a401-cddf861d6d23" />
+
+
+## Auto evaluación: 
+Actividad 1,2,3 y 5: 5, hice a conciencia el proceso de diseño y las actividades propuestas, finalicé al 100% la documentacion
+Actividad 4: 3.5, me falto el numeral 3
+Nota: 4,7
+Justificación: No logré finalizar la actividad 4 pero hice 2/3 puntos de esta actividad.
 
