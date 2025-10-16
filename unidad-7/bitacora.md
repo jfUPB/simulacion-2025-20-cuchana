@@ -67,6 +67,7 @@ function draw() {
 }
 
 ```
+<img width="742" height="501" alt="image" src="https://github.com/user-attachments/assets/550cd623-dfe6-4bb7-a305-3d446f121592" />
 
 Experimento 2: bolitas con gravedad que se pueden mover con el mouse
 ```js
@@ -111,6 +112,7 @@ function draw() {
 }
 
 ```
+<img width="725" height="495" alt="image" src="https://github.com/user-attachments/assets/6b1355ae-418d-42cd-9399-4a71aab13acb" />
 
 Conceptos: 
 
@@ -276,3 +278,4 @@ function alignFinal() {
 ## Autoevaluacion: 
 
 5, complete todas las actividades a consiencia
+
