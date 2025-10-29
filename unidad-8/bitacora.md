@@ -27,7 +27,7 @@ Elegí CHIHIRO de Billie Eilish, aquí esta el enlace: https://youtu.be/BY_XwvKo
 
 2. La descripción de tu concepto visual.
 
-
+En si la cancion habla como de una relación que se esta tornando toxica, me da muchas vibras de tonos oscuros, como azules, quiero que haya ondas que reaccionen al beat, y como en si la canción y el album evocan esa sensación de estar bajo agua
 
 3. Los inputs seleccionados y la justificación de por qué los elegiste.
 
@@ -42,4 +42,5 @@ Elegí CHIHIRO de Billie Eilish, aquí esta el enlace: https://youtu.be/BY_XwvKo
 
    
 ## Actividad 3
+
 
